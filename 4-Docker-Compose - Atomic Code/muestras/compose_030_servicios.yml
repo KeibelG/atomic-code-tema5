@@ -1,0 +1,191 @@
+version: "3.8"
+services:
+  servicio000:
+    image: atomic/demo:0
+    networks:
+      - red0
+  servicio001:
+    image: atomic/demo:1
+    networks:
+      - red1
+      - red2
+  servicio002:
+    image: atomic/demo:2
+    networks:
+      - red2
+      - red3
+      - red4
+  servicio003:
+    image: atomic/demo:3
+    networks:
+      red3:
+        ipv4_address: 10.5.3.5
+  servicio004:
+    image: atomic/demo:4
+    networks:
+      - red4
+      - red0
+  servicio005:
+    image: atomic/demo:5
+    networks:
+      - red0
+      - red1
+      - red2
+  servicio006:
+    image: atomic/demo:6
+    networks:
+      - red1
+  servicio007:
+    image: atomic/demo:7
+    networks:
+      red2:
+        ipv4_address: 10.5.7.9
+      red3:
+  servicio008:
+    image: atomic/demo:8
+    networks:
+      - red3
+      - red4
+      - red0
+  servicio009:
+    image: atomic/demo:9
+    networks:
+      - red4
+  servicio010:
+    image: atomic/demo:10
+    networks:
+      - red0
+      - red1
+  servicio011:
+    image: atomic/demo:11
+    networks:
+      red1:
+        ipv4_address: 10.5.11.13
+      red2:
+      red3:
+  servicio012:
+    image: atomic/demo:12
+    networks:
+      - red2
+  servicio013:
+    image: atomic/demo:13
+    networks:
+      - red3
+      - red4
+  servicio014:
+    image: atomic/demo:14
+    networks:
+      - red4
+      - red0
+      - red1
+  servicio015:
+    image: atomic/demo:15
+    networks:
+      red0:
+        ipv4_address: 10.5.15.17
+  servicio016:
+    image: atomic/demo:16
+    networks:
+      - red1
+      - red2
+  servicio017:
+    image: atomic/demo:17
+    networks:
+      - red2
+      - red3
+      - red4
+  servicio018:
+    image: atomic/demo:18
+    networks:
+      - red3
+  servicio019:
+    image: atomic/demo:19
+    networks:
+      red4:
+        ipv4_address: 10.5.19.21
+      red0:
+  servicio020:
+    image: atomic/demo:20
+    networks:
+      - red0
+      - red1
+      - red2
+  servicio021:
+    image: atomic/demo:21
+    networks:
+      - red1
+  servicio022:
+    image: atomic/demo:22
+    networks:
+      - red2
+      - red3
+  servicio023:
+    image: atomic/demo:23
+    networks:
+      red3:
+        ipv4_address: 10.5.23.25
+      red4:
+      red0:
+  servicio024:
+    image: atomic/demo:24
+    networks:
+      - red4
+  servicio025:
+    image: atomic/demo:25
+    networks:
+      - red0
+      - red1
+  servicio026:
+    image: atomic/demo:26
+    networks:
+      - red1
+      - red2
+      - red3
+  servicio027:
+    image: atomic/demo:27
+    networks:
+      red2:
+        ipv4_address: 10.5.27.29
+  servicio028:
+    image: atomic/demo:28
+    networks:
+      - red3
+      - red4
+  servicio029:
+    image: atomic/demo:29
+    networks:
+      - red4
+      - red0
+      - red1
+
+networks:
+  red0:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.0.0/16
+          gateway: 10.0.0.1
+  red1:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.1.0.0/16
+          gateway: 10.1.0.1
+  red2:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.2.0.0/16
+          gateway: 10.2.0.1
+  red3:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.3.0.0/16
+          gateway: 10.3.0.1
+  red4:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.4.0.0/16
+          gateway: 10.4.0.1

@@ -1,0 +1,11 @@
+[package]
+name = "compose_netparser"
+version = "1.0.0"
+edition = "2021"
+
+[[bin]]
+name = "compose_netparser"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 3

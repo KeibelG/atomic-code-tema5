@@ -1,0 +1,105 @@
+version: "3.8"
+services:
+  servicio000:
+    image: atomic/demo:0
+    networks:
+      - red0
+  servicio001:
+    image: atomic/demo:1
+    networks:
+      - red1
+      - red2
+  servicio002:
+    image: atomic/demo:2
+    networks:
+      - red2
+      - red0
+      - red1
+  servicio003:
+    image: atomic/demo:3
+    networks:
+      red0:
+        ipv4_address: 10.3.3.5
+  servicio004:
+    image: atomic/demo:4
+    networks:
+      - red1
+      - red2
+  servicio005:
+    image: atomic/demo:5
+    networks:
+      - red2
+      - red0
+      - red1
+  servicio006:
+    image: atomic/demo:6
+    networks:
+      - red0
+  servicio007:
+    image: atomic/demo:7
+    networks:
+      red1:
+        ipv4_address: 10.3.7.9
+      red2:
+  servicio008:
+    image: atomic/demo:8
+    networks:
+      - red2
+      - red0
+      - red1
+  servicio009:
+    image: atomic/demo:9
+    networks:
+      - red0
+  servicio010:
+    image: atomic/demo:10
+    networks:
+      - red1
+      - red2
+  servicio011:
+    image: atomic/demo:11
+    networks:
+      red2:
+        ipv4_address: 10.3.11.13
+      red0:
+      red1:
+  servicio012:
+    image: atomic/demo:12
+    networks:
+      - red0
+  servicio013:
+    image: atomic/demo:13
+    networks:
+      - red1
+      - red2
+  servicio014:
+    image: atomic/demo:14
+    networks:
+      - red2
+      - red0
+      - red1
+  servicio015:
+    image: atomic/demo:15
+    networks:
+      red0:
+        ipv4_address: 10.3.15.17
+
+networks:
+  red0:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.0.0/16
+          gateway: 10.0.0.1
+  red1:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.1.0.0/16
+          gateway: 10.1.0.1
+  red2:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.2.0.0/16
+          gateway: 10.2.0.1

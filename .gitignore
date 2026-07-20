@@ -1,0 +1,41 @@
+# Archivos generados por Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Compilados de C
+*.o
+*.obj
+*.exe
+*.out
+
+# Artefactos de build de PyInstaller (ejecutar_todo.exe se genera con esto)
+build/
+dist/
+*.spec
+
+# Rust
+/**/target/
+Cargo.lock
+
+# Java
+*.class
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Solo la Pregunta 4 (Docker Compose) va completa en este repositorio. Las
+# demas preguntas se suben como estructura vacia (carpeta + .gitkeep) hasta
+# que cada integrante suba su parte por separado.
+/1-AST - Atomic Code/*
+!/1-AST - Atomic Code/.gitkeep
+
+/2-LL-LR - Atomic Code/*
+!/2-LL-LR - Atomic Code/.gitkeep
+
+/5-UnegScript - Atomic Code/*
+!/5-UnegScript - Atomic Code/.gitkeep

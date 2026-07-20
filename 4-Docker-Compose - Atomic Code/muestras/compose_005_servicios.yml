@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+  servicio000:
+    image: atomic/demo:0
+    networks:
+      - red0
+  servicio001:
+    image: atomic/demo:1
+    networks:
+      - red0
+      - red0
+  servicio002:
+    image: atomic/demo:2
+    networks:
+      - red0
+      - red0
+      - red0
+  servicio003:
+    image: atomic/demo:3
+    networks:
+      red0:
+        ipv4_address: 10.1.3.5
+  servicio004:
+    image: atomic/demo:4
+    networks:
+      - red0
+      - red0
+
+networks:
+  red0:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.0.0/16
+          gateway: 10.0.0.1
